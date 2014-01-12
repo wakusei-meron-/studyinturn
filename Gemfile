@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 #認証
 gem 'devise'
 
+#DB管理
+gem 'rails_admin'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
