@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#gem 追加
+#認証
+gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
