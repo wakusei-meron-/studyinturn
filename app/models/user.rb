@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :omniauthable
+         :rememberable, :trackable, 
+         #:confirmable,
+         :omniauthable
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -20,9 +21,11 @@ class User < ActiveRecord::Base
       user = User.create(name:auth.extra.raw_info.name,
                          provider:auth.provider,
                          uid:auth.uid,
+                         email:auth.info.email,
                          password:Devise.friendly_token[0,20]
                          )
     end
+    puts user
     return user
   end
 
