@@ -14,3 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore Emacs Backup File
+*~
+#*
+.#
+app/models/#company.rb#
+app/models/.#company.rb
