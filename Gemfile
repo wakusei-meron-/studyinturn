@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 #認証
 gem 'devise'
 
+#facebook認証
+gem "omniauth"
+gem "omniauth-facebook"
+
 #DB管理
 gem 'rails_admin'
 
