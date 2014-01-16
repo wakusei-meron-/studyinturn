@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>概要:</strong>
   <%= @entry.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>仕事の内容:</strong>
   <%= @entry.body %>
 </p>
+<p>
+  <% if user_signed_in? -%>
+    <%= link_to "申し込む", root_path %>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
+  <% end -%>
+</p>
+<% if company_signed_in? -%>
+
+  <%= link_to 'Edit', edit_entry_path(@entry) %> |
+<% end -%>
+
 <%= link_to 'Back', entries_path %>
