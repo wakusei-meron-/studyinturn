@@ -1,68 +1,20 @@
+# -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_company!, :except => [:index, :show]
+  #before_filter :authenticate_company!, :except => [:index, :show]
 
   # GET /entries
   # GET /entries.json
-  def index
-    # @entries = Entry.all
-    @entries = Entry.find_all_by_company_id([current_company])
-  end
+   def index
+     @entries = Entry.all
+    
+   end
 
-  # GET /entries/1
-  # GET /entries/1.json
-  def show
-  end
-
-  # GET /entries/new
-  def new
-    @entry = Entry.new
-  end
-
-  # GET /entries/1/edit
-  def edit
-  end
-
-  # POST /entries
-  # POST /entries.json
-  def create
-    @entry = Entry.new(entry_params)
-    @entry.company = current_company
-
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to entries_path}#redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @entry }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /entries/1
-  # PATCH/PUT /entries/1.json
-  def update
-    respond_to do |format|
-      if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /entries/1
-  # DELETE /entries/1.json
-  def destroy
-    @entry.destroy
-    respond_to do |format|
-      format.html { redirect_to entries_url }
-      format.json { head :no_content }
-    end
-  end
+  # # GET /entries/1
+  # # GET /entries/1.json
+   def show
+   
+   end
 
   private
     # Use callbacks to share common setup or constraints between actions.

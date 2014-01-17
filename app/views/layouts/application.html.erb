@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if company_signed_in? -%>
+    <%= link_to image_tag("logo.png"), company_entries_path(current_company) %>
+  <% else -%>
+      <%= link_to image_tag("logo.png"), root_path %>
+  <% end -%>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 

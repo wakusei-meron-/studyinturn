@@ -1,2 +1,22 @@
-<h1>Company::Entries#show</h1>
-<p>Find me in app/views/company/entries/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>概要:</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>仕事の内容:</strong>
+  <%= @entry.body %>
+</p>
+<p><%= @entry.company %>
+
+</p>
+<p>
+</p>
+<% if company_signed_in? -%>
+
+  <%= link_to 'Edit', edit_company_entry_path(@entry) %> |
+<% end -%>
+
+<%= link_to 'Back', company_entries_path %>
