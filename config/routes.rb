@@ -1,5 +1,7 @@
 Studyinturn2::Application.routes.draw do
   
+  resources :applicants
+
   devise_for :companies
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
@@ -9,7 +11,7 @@ Studyinturn2::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'entries#index'
+  root 'applicants#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

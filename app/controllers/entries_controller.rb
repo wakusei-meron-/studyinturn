@@ -5,7 +5,8 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    # @entries = Entry.all
+    @entries = Entry.find_all_by_company_id([current_company])
   end
 
   # GET /entries/1
@@ -26,10 +27,11 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
+    @entry.company = current_company
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to entries_path}#redirect_to @entry, notice: 'Entry was successfully created.' }
         format.json { render action: 'show', status: :created, location: @entry }
       else
         format.html { render action: 'new' }

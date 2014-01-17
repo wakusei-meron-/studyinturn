@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @applicant.user %>
+</p>
+
+<p>
+  <strong>Entry:</strong>
+  <%= @applicant.entry %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @applicant.body %>
+</p>
+
+<%= link_to 'Edit', edit_applicant_path(@applicant) %> |
+<%= link_to 'Back', applicants_path %>

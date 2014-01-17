@@ -9,6 +9,9 @@
   <strong>仕事の内容:</strong>
   <%= @entry.body %>
 </p>
+<p><%= @entry.company %>
+
+</p>
 <p>
   <% if user_signed_in? -%>
     <%= link_to "申し込む", root_path %>
