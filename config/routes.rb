@@ -1,17 +1,25 @@
 Studyinturn2::Application.routes.draw do
   
-  resources :applicants
+  # get "entries/index"
+  # get "entries/show"
+  # get "entries/new"
+  # get "entries/edit"
+  # get "entries/create"
+  # get "entries/destroy"
+  # resources :applicants
 
   devise_for :companies
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
-  resources :entries
-
+  resources :entries do
+    resource :applicants
+  end  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'applicants#index'
+  root 'entries#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -56,9 +64,9 @@ Studyinturn2::Application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  namespace :company do
+    # Directs /admin/products/* to Admin::ProductsController
+    # (app/controllers/admin/products_controller.rb)
+    resources :entries
+  end
 end

@@ -4,7 +4,8 @@ class ApplicantsController < ApplicationController
   # GET /applicants
   # GET /applicants.json
   def index
-    @applicants = Applicant.all
+    # @applicants = Applicant.all
+    @entries = Entry.all
   end
 
   # GET /applicants/1
@@ -64,7 +65,8 @@ class ApplicantsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_applicant
-      @applicant = Applicant.find(params[:id])
+      @entry = Entry.find(params[:id])
+      # @applicant = Applicant.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
