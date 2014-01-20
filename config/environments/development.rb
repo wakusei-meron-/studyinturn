@@ -11,7 +11,7 @@ Studyinturn2::Application.configure do
     :enable_starttls_auto => true,
     :address => 'smtp.sakura.ne.jp',
     :domain => 'studyinturn.com',
-    :user_name => 'support@studyinturn.com',
+    :user_name => 'dotinstall',
     :password => 'dotinstall',
     :port => 587,
     :authentication => 'plain'
