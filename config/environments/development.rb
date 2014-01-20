@@ -5,35 +5,35 @@ Studyinturn2::Application.configure do
   #メールの設定
   config.action_mailer.delivery_method = :smtp
 
-  #VPS用
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => 'smtp.sakura.ne.jp',
-    :domain => 'studyinturn.com',
-    :user_name => 'dotinstall',
-    :password => 'dotinstall',
-    :port => 587,
-    :authentication => 'plain'
-  }
-  
-  #ホストの設定
-  config.action_mailer.default_url_options = { :host => 'dotinstall'}
-  
-  #Gmail用
+  #VPS用今はダメ。。。
   # config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.smtp_settings = {
   #   :enable_starttls_auto => true,
-  #   :address => 'smtp.gmail.com',
-  #   :domain => 'b0941015',
-  #   :user_name => 'b0941015@gmail.com',
-  #   :password => 'itini3da-!!',
+  #   :address => 'smtp.sakura.ne.jp',
+  #   :domain => 'studyinturn.com',
+  #   :user_name => 'dotinstall',
+  #   :password => 'dotinstall',
   #   :port => 587,
   #   :authentication => 'plain'
   # }
   
   #ホストの設定
-  #config.action_mailer.default_url_options = { :host => 'b0941015'}# 'localhost:3000'}
+  #  config.action_mailer.default_url_options = { :host => 'dotinstall'}
+  
+  #Gmail用
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => 'smtp.gmail.com',
+    :domain => 'b0941015',
+    :user_name => 'b0941015@gmail.com',
+    :password => 'itini3da-!!',
+    :port => 587,
+    :authentication => 'plain'
+  }
+  
+  ホストの設定
+  config.action_mailer.default_url_options = { :host => 'b0941015'}# 'localhost:3000'}
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
