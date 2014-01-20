@@ -9,18 +9,17 @@
   <strong>仕事の内容:</strong>
   <%= @entry.body %>
 </p>
-<p><%= @entry.company %>
 
-</p>
 <p>
   <% if user_signed_in? -%>
-    <%= link_to "申し込む", root_path %>
+    <%# if @user_applicants[user_id].index(@entry.applicant) -%>
+      <%#= link_to "キャンセル", new_entry_applicants_path(@entry) %>
+    <%# else -%>
+          <%= link_to "申し込む", new_entry_applicants_path(@entry) %>
+    <%# end -%>
+
+
 
   <% end -%>
 </p>
-<% if company_signed_in? -%>
-
-  <%= link_to 'Edit', edit_entry_path(@entry) %> |
-<% end -%>
-
 <%= link_to 'Back', entries_path %>

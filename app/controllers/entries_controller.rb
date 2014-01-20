@@ -13,8 +13,10 @@ class EntriesController < ApplicationController
   # # GET /entries/1
   # # GET /entries/1.json
    def show
-   
+   #  @user_applicants = Applicant.find_all_by_user_id(current_user)
    end
+
+   
 
   private
     # Use callbacks to share common setup or constraints between actions.

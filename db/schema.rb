@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116121540) do
+ActiveRecord::Schema.define(version: 20140117172641) do
 
   create_table "applicants", force: true do |t|
     t.integer  "user_id"
@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 20140116121540) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
+    t.integer  "applicant_id"
   end
 
+  add_index "entries", ["applicant_id"], name: "index_entries_on_applicant_id", using: :btree
   add_index "entries", ["company_id"], name: "index_entries_on_company_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
