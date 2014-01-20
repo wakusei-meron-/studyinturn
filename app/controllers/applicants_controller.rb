@@ -31,7 +31,7 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to entries_path, notice: '申し込み完了.' }
+        format.html { redirect_to entries_path, notice: '申し込み完了' }
         format.json { render action: 'show', status: :created, location: @applicant }
       else
         format.html { render action: 'new' }

@@ -11,7 +11,9 @@ class Company::ApplicantsController < ApplicationController
 
   def mail_send
 
-    NoticeMail.sendmail_notification.deliver
+    applicant = Applicant.find(params[:entry_id])
+    user = User.find(applicant.user_id)
+    NoticeMail.sendmail_notification(user.email, user.name).deliver
     redirect_to company_entries_path, :notice => "メール送信完了"
     
   end

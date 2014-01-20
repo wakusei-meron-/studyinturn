@@ -6,9 +6,9 @@ class NoticeMail < ActionMailer::Base
   #
   #   en.notice_mail.sendmail_notification.subject
   #
-  def sendmail_notification
-    @greeting = "Hi"
+  def sendmail_notification(email, name)
+    @greeting = name
 
-    mail to: "biba.biba.rock@r3.dion.ne.jp"
+    mail to: email#"biba.biba.rock@r3.dion.ne.jp"
   end
 end
