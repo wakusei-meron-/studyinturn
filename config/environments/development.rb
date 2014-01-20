@@ -18,7 +18,7 @@ Studyinturn2::Application.configure do
   }
   
   #ホストの設定
-  config.action_mailer.default_url_options = { :host => 'support'}
+  config.action_mailer.default_url_options = { :host => 'dotinstall'}
   
   #Gmail用
   # config.action_mailer.raise_delivery_errors = true
