@@ -1,0 +1,15 @@
+<h1>Company::Applicants#show</h1>
+<p>Find me in app/views/company/applicants/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前:</strong>
+  <%= User.find(@applicant.user_id).name %>
+</p>
+
+<p>
+  <strong>意気込み:</strong>
+  <%= @applicant.body %>
+</p>
+
+<%= link_to 'Send Mail', action: "mail_send" %>

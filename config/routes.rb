@@ -1,19 +1,28 @@
+# -*- coding: utf-8 -*-
 Studyinturn2::Application.routes.draw do
   
+  get "applicants/index"
+  get "applicants/show"
   # get "entries/index"
-  # get "entries/show"
-  # get "entries/new"
-  # get "entries/edit"
-  # get "entries/create"
-  # get "entries/destroy"
-  # resources :applicants
 
+  #　認証関連
   devise_for :companies
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
+
+  #　ユーザーページ関連
   resources :entries do
     resource :applicants
-  end  
+  end
+
+  # 企業用ページ関連
+  namespace :company do
+    # Directs /admin/products/* to Admin::ProductsController
+    # (app/controllers/admin/products_controller.rb)
+    resources :entries do
+      resources :applicants, :only => ['index', 'show']
+    end
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -63,10 +72,12 @@ Studyinturn2::Application.routes.draw do
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
-  # Example resource route within a namespace:
-  namespace :company do
-    # Directs /admin/products/* to Admin::ProductsController
-    # (app/controllers/admin/products_controller.rb)
-    resources :entries
-  end
+  # # Example resource route within a namespace:
+  # namespace :company do
+  #   # Directs /admin/products/* to Admin::ProductsController
+  #   # (app/controllers/admin/products_controller.rb)
+  #   resources :entries do
+  #     resources :applicants, :only => ['index', 'show']
+  #   end
+  # end
 end

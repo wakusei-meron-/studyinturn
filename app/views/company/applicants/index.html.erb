@@ -1,0 +1,23 @@
+<h1>Company::Applicants#index</h1>
+<p>Find me in app/views/company/applicants/index.html.erb</p>
+<p>申し込み者一覧</p>
+<table width="" cellspacing="" cellpadding="" border="">
+  <thead>
+    <tr>
+      <th><!-- アイコン --></th>
+      <th>名前</th>
+      <th>コメント</th>
+      <th>詳細</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @applicants.each do |applicant| -%>
+    <tr>
+      <td><%= "アイコン" %></td>
+      <td><%= User.find(applicant.user_id).name %></td>
+      <td><%= applicant.body %></td>
+      <td><%= link_to "詳細", company_entry_applicant_path( @entry, id: applicant, entry_id: "2") %></td>
+    </tr>
+    <% end -%>
+  </tbody>
+</table>

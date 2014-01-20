@@ -23,7 +23,7 @@ class Company::EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to company_entries_path}#redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to company_entries_path, notice: '登録完了' }
         format.json { render action: 'show', status: :created, location: @entry }
       else
         format.html { render action: 'new' }
