@@ -32,7 +32,7 @@ Studyinturn2::Application.configure do
     :authentication => 'plain'
   }
   
-  ホストの設定
+  #ホストの設定
   config.action_mailer.default_url_options = { :host => 'b0941015'}# 'localhost:3000'}
 
   # In the development environment your application's code is reloaded on
