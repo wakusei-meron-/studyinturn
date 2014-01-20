@@ -9,13 +9,14 @@ Studyinturn2::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    # :address => 'smtp.gmail.com',
+    :address => 'smtp.sakura.ne.jp',
     :domain => 'studyinturn.com',
     :user_name => 'support@studyinturn.com',
     :password => 'dotinstall',
     :port => 587,
     :authentication => 'plain'
   }
+  
   #ホストの設定
   config.action_mailer.default_url_options = { :host => 'support'}
   
@@ -30,6 +31,7 @@ Studyinturn2::Application.configure do
   #   :port => 587,
   #   :authentication => 'plain'
   # }
+  
   #ホストの設定
   #config.action_mailer.default_url_options = { :host => 'b0941015'}# 'localhost:3000'}
 
