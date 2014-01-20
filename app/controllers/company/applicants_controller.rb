@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Company::ApplicantsController < ApplicationController
   before_action :set_applicant, only: [:show]
   def index
@@ -6,15 +7,20 @@ class Company::ApplicantsController < ApplicationController
   end
 
   def show
-    @entry = Entry.find(params[:entry_id])
+  end
+
+  def mail_send
+    redirect_to company_entries_path, :notice => "メール送信完了"
+    
   end
 
   private
   def set_applicant
     @applicant = Applicant.find(params[:id])
+    @entry = Entry.find(params[:entry_id])
   end
 
-  def applicant_params
-#    params.require(:applicant).permit(:body)
-  end
+  # def applicant_params
+  #   params.require(:applicant).permit(:body)
+  # end
 end
