@@ -10,6 +10,8 @@ class Company::ApplicantsController < ApplicationController
   end
 
   def mail_send
+
+    NoticeMail.sendmail_notification.deliver
     redirect_to company_entries_path, :notice => "メール送信完了"
     
   end
