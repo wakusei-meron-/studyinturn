@@ -16,6 +16,7 @@ Studyinturn2::Application.configure do
     :port => 587,
     :authentication => 'plain'
   }
+  
   #ホストの設定
   config.action_mailer.default_url_options = { :host => 'support'}
   
@@ -30,6 +31,7 @@ Studyinturn2::Application.configure do
   #   :port => 587,
   #   :authentication => 'plain'
   # }
+  
   #ホストの設定
   #config.action_mailer.default_url_options = { :host => 'b0941015'}# 'localhost:3000'}
 
