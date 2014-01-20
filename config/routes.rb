@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 Studyinturn2::Application.routes.draw do
   
-  get "applicants/index"
-  get "applicants/show"
-  # get "entries/index"
+
+
 
   #　認証関連
   devise_for :companies
@@ -21,6 +20,8 @@ Studyinturn2::Application.routes.draw do
     # (app/controllers/admin/products_controller.rb)
     resources :entries do
       resources :applicants, :only => ['index', 'show']
+      # メール送信
+      get "mail_send" => 'applicants#mail_send'
     end
   end
   

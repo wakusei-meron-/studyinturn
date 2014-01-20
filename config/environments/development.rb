@@ -1,8 +1,37 @@
 # -*- coding: utf-8 -*-
 Studyinturn2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+
+  #メールの設定
+  config.action_mailer.delivery_method = :smtp
+
+  #VPS用
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    # :address => 'smtp.gmail.com',
+    :domain => 'studyinturn.com',
+    :user_name => 'support@studyinturn.com',
+    :password => 'dotinstall',
+    :port => 587,
+    :authentication => 'plain'
+  }
+  ホストの設定
+  config.action_mailer.default_url_options = { :host => 'support'}
+  
+  #Gmail用
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.smtp_settings = {
+  #   :enable_starttls_auto => true,
+  #   :address => 'smtp.gmail.com',
+  #   :domain => 'b0941015',
+  #   :user_name => 'b0941015@gmail.com',
+  #   :password => 'itini3da-!!',
+  #   :port => 587,
+  #   :authentication => 'plain'
+  # }
   #ホストの設定
-  config.action_mailer.default_url_options = { :host => 'localhost:3000'}
+  #config.action_mailer.default_url_options = { :host => 'b0941015'}# 'localhost:3000'}
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -15,9 +44,7 @@ Studyinturn2::Application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
