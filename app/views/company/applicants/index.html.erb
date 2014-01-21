@@ -1,13 +1,11 @@
-<h1>Company::Applicants#index</h1>
-<p>Find me in app/views/company/applicants/index.html.erb</p>
-<p>申し込み者一覧</p>
+<h1>申し込み者一覧</h1>
 <table width="" cellspacing="" cellpadding="" border="">
   <thead>
     <tr>
       <th><!-- アイコン --></th>
-      <th>名前</th>
+      <th>応募者名前</th>
       <th>コメント</th>
-      <th>詳細</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -16,8 +14,12 @@
       <td><%= "アイコン" %></td>
       <td><%= User.find(applicant.user_id).name %></td>
       <td><%= applicant.body %></td>
-      <td><%= link_to "詳細", company_entry_applicant_path( @entry, id: applicant, entry_id: "2") %></td>
+      <td><%= link_to "詳細", company_entry_applicant_path( @entry, id: applicant, entry_id: params[:entry_id]) %></td>
     </tr>
     <% end -%>
   </tbody>
 </table>
+
+<br />
+<%= link_to "戻る", company_entries_path %>
+

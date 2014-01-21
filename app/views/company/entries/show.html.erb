@@ -9,14 +9,12 @@
   <strong>仕事の内容:</strong>
   <%= @entry.body %>
 </p>
-<p><%= @entry.company %>
 
-</p>
 <p>
 </p>
 <% if company_signed_in? -%>
 
-  <%= link_to 'Edit', edit_company_entry_path(@entry) %> |
+  <%= link_to '編集', edit_company_entry_path(@entry) %> |
 <% end -%>
 
-<%= link_to 'Back', company_entries_path %>
+<%= link_to '戻る', company_entries_path %>

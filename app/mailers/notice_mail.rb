@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class NoticeMail < ActionMailer::Base
   default from: "suport@studyindurn.com"
 
@@ -10,5 +11,6 @@ class NoticeMail < ActionMailer::Base
     @greeting = name
 
     mail to: email#"biba.biba.rock@r3.dion.ne.jp"
+    mail subject: "[お知らせ]申し込んだインターンが成立しました！"
   end
 end

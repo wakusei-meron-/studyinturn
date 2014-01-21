@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1>求人内容詳細</h1>
 <p>
   <strong>概要:</strong>
   <%= @entry.title %>
@@ -18,8 +18,6 @@
           <%= link_to "申し込む", new_entry_applicants_path(@entry) %>
     <%# end -%>
 
-
-
   <% end -%>
 </p>
-<%= link_to 'Back', entries_path %>
+<%= link_to '戻る', entries_path %>

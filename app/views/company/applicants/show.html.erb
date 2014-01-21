@@ -1,5 +1,4 @@
-<h1>Company::Applicants#show</h1>
-<p>Find me in app/views/company/applicants/show.html.erb</p>
+<h1>応募者詳細情報</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,4 +11,5 @@
   <%= @applicant.body %>
 </p>
 
-<%= link_to 'Send Mail', :action => "mail_send" %>
+<%= link_to '採用する', :action => "mail_send" %>|<%= link_to '一覧に戻る', company_entry_applicants_path(@entry)  %>
+
