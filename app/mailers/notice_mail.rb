@@ -10,7 +10,7 @@ class NoticeMail < ActionMailer::Base
   def sendmail_notification(email, name)
     @greeting = name
 
-    mail to: email
+    mail to: email.to_s
     mail subject: "[お知らせ]申し込んだインターンが成立しました！"
   end
 end
