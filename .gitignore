@@ -17,7 +17,5 @@
 
 # Ignore Emacs Backup File
 *~
-#*
-.#
-app/models/#company.rb#
-app/models/.#company.rb
+\#*\#
+/.\#
