@@ -6,47 +6,10 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <% if company_signed_in? -%>
-    <%= link_to image_tag("logo.png"), company_entries_path(current_company) %>
-  <% else -%>
-      <%= link_to image_tag("logo.png"), root_path %>
-  <% end -%>
+<body id="main">
+  <div id="main_area">
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <p>
-    <div Align="right">
-      <% if company_signed_in? -%>
-	<%= link_to "企業ログアウト", destroy_company_session_path, :method => :delete %>
-      <% else -%>
-	<% unless user_signed_in? -%>
-	  <%= link_to "企業の方　ログイン ", new_company_session_path %>
-	<% end -%>
-
-      <% end -%>
-    </div>
-  </p>
-  <p>
-    <div Align="center">
-      <% if user_signed_in? -%>
-	<%= link_to "ユーザーログアウト", destroy_user_session_path, :method => :delete %>
-      <% else -%>
-	<% unless company_signed_in? -%>
-	  	  <%= link_to "sign in with facebook ", user_omniauth_authorize_path(:facebook) %>
-
-	<% end -%>
-      <% end -%>
-
-
-
-
-
-    </div>
-  </p>
-
-<%= yield %>
-
+    <%= yield %>    
+  </div>
 </body>
 </html>

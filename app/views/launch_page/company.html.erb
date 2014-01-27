@@ -1,2 +1,22 @@
-<h1>LaunchPage#company</h1>
-<p>Find me in app/views/launch_page/company.html.erb</p>
+<div class="header">
+
+  <div class="main_logo">
+      <%= link_to image_tag("logo.png"), root_path, :class => "logo" %>
+  </div>
+  <div class="header-right">
+    <%= link_to "既に会員登録済みの企業の方", new_company_session_path %>
+  </div>
+</div>
+
+<%= image_tag("top1.png") %>
+<%= link_to image_tag("link_btn.png", :class => "signup_btn"), new_company_registration_path %>  
+<%= image_tag("top2.png") %>
+<%= link_to image_tag("link_btn.png", :class => "signup_btn"), new_company_registration_path %>  
+<%= image_tag("top3.png") %>
+
+<!-- カウントダウン -->
+<div class="Timer">
+  <p class="Timer_string">キャンペーン終了まで</p>
+  <div id="CDT">  </div>
+</div>
+<%= link_to image_tag("link_btn.png", :class => "signup_btn"), new_company_registration_path %>  

@@ -1,3 +1,83 @@
 // Place all the styles related to the LaunchPage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//ヘッダー関連
+$MAX_CONTENT_WIDTH : 980px;
+$HEADER_HEIGHT : 50px;
+$HEADER_RIGHT_WIDTH : 180px;
+.header{
+   width : $MAX_CONTENT_WIDTH;
+   height : $HEADER_HEIGHT;
+   margin-top : 20px;
+
+   .main_logo{
+      width : $MAX_CONTENT_WIDTH - $HEADER_RIGHT_WIDTH;
+      height : $HEADER_HEIGHT;
+      float : left;
+   }
+
+   .header-right{
+      width : $HEADER_RIGHT_WIDTH;
+      height : $HEADER_HEIGHT;
+      float : right;
+      font-size : 1em;
+   }
+}
+
+.signup_btn{
+  display : block;
+  margin : 0 auto 0 auto;
+}
+
+.Timer_string{
+  padding-left: 1em;
+  padding-top: 0.5em;
+  height: 1.5em;
+  background-color : #7ac043;
+  color: #ffffff;
+  font-size : 2em;
+}
+
+#CDT{
+   width: 540px;
+ color: white;
+ font-weight: bold;
+ text-align: center;
+ padding: 15px 10px 5px 10px;
+ margin-bottom: 1em;
+ background-color: #E89502;
+ background-image:-moz-linear-gradient(top, #FAD502, #E89502);
+ background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FAD502), to(#E89502), color-stop(1,#E89502));
+ -webkit-border-top-left-radius: 0px;
+ -khtml-border-radius-topleft: 0px;
+ -moz-border-radius-topleft: 0px;
+ border-top-left-radius: 0px;
+ 
+ -webkit-border-top-right-radius: 90px;
+ -khtml-border-radius-topright: 90px;
+ -moz-border-radius-topright: 90px;
+ border-top-right-radius: 90px;
+ 
+ -webkit-border-bottom-left-radius: 0px;
+ -khtml-border-radius-bottomleft: 0px;
+ -moz-border-radius-bottomleft: 0px;
+ border-bottom-left-radius: 0px;
+ 
+ -webkit-border-bottom-right-radius: 90px;
+ -khtml-border-radius-bottomright: 90px;
+ -moz-border-radius-bottomright: 90px;
+ border-bottom-right-radius: 90px;
+ box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+ -moz-box-shadow: 5px 5px 5px  rgba(0,0,0,0.25);
+ -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+
+  .day{
+    font-size: 48px;
+  }
+  .hour, .min, .sec{
+    font-size: 32px;
+  }
+
+  
+}
