@@ -281,6 +281,14 @@
           <%= f.text_area :bikou %>
 	</td>
       </tr>
+      <tr>
+	<td colspan="2">  <div align="center">
+    <%#= f.submit "sign_up"%>
+
+    <%= image_submit_tag("com_submit_btn.png") %>
+
+    </div></td>
+      </tr>
     </table>
 
     <!-- パスワード生成 -->
@@ -289,12 +297,7 @@
   <%= f.hidden_field :password, :value => pass %></div>
   <%= f.hidden_field :password_confirmation, :value => pass %></div>
 
-  <div align="center">
-    <%= f.submit %>
 
-    <%= image_submit_tag("com_submit_btn.png") %>
-
-    </div>
 <% end %>
 
 </div>
