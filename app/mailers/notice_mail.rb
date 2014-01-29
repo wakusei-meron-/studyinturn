@@ -11,6 +11,6 @@ class NoticeMail < ActionMailer::Base
     @greeting = name
 
     mail to: email.to_s
-    mail subject: "[お知らせ]申し込んだインターンが成立しました！"
+    mail subject: "[確認]申し込みを受付けました"
   end
 end
