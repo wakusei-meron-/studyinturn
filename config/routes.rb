@@ -4,7 +4,9 @@ Studyinturn2::Application.routes.draw do
   get "launch_page/company"
   get "launch_page/user"
   #　認証関連
-  devise_for :companies
+  devise_for :companies, :controllers => {
+    :registrations => 'companies/registrations'
+  }
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
 

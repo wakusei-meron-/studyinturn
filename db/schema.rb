@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117172641) do
+ActiveRecord::Schema.define(version: 20140129021506) do
 
   create_table "applicants", force: true do |t|
     t.integer  "user_id"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 20140117172641) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "name_a"
+    t.string   "top"
+    t.string   "tantou"
+    t.string   "tantou_a"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "address3"
+    t.string   "tel"
+    t.string   "url"
+    t.text     "bikou"
   end
 
   add_index "companies", ["email"], name: "index_companies_on_email", unique: true, using: :btree

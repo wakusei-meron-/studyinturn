@@ -15,11 +15,11 @@
           <p>
             会社名
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input name="data[Keisai][name]" type="text" class="required" id="name" />          <span>
-            例）株式会社アイタンクジャパン
+          <%= f.text_field :name %>
+	  <span>
+            例）株式会社StudyInturn
           </span>
         </td>
       </tr>
@@ -28,11 +28,11 @@
           <p>
             会社名（フリガナ）
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input name="data[Keisai][name_a]" type="text" class="validate required" id="KeisaiNameA" />          <span>
-            例）カブシキカイシャアイタンクジャパン
+	  <%= f.text_field :name_a %>
+	  <span>
+            例）カブシキカイシャスタディインターン
           </span>
         </td>
       </tr>
@@ -41,11 +41,11 @@
           <p>
             代表者名
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input name="data[Keisai][top]" type="text" class="required" id="top" />          <span>
-            例）丹羽 健二
+          <%= f.text_field :top %>
+	  <span>
+            例）児島 無有
           </span>
         </td>
       </tr>
@@ -54,11 +54,11 @@
           <p>
             担当者名
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input name="data[Keisai][tantou]" type="text" class="required" id="tantou" />          <span>
-            例）佐藤 健人
+          <%= f.text_field :tantou %>
+	  <span>
+            例）石橋 弦樹
           </span>
         </td>
       </tr>
@@ -67,11 +67,11 @@
           <p>
             担当者名（フリガナ）
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input name="data[Keisai][tantou_a]" type="text" class="validate required" id="KeisaiTantouA" />          <span>
-            例）サトウタケト
+          <%= f.text_field :tantou_a %>
+	  <span>
+            例）イシバシゲンキ
           </span>
         </td>
       </tr>
@@ -80,10 +80,10 @@
           <p>
             担当者メールアドレス
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input name="data[Keisai][t_mail]" type="text" class="email hankaku required" id="KeisaiTMail" />          <span>
+          <%= f.text_field :email %>
+	  <span>
             info@example.jp
           </span>
         </td>
@@ -93,24 +93,25 @@
           <p>
             所在地
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
           <div class="address">
             <h4>
               郵便番号
             </h4>
-            <input name="data[Keisai][address1]" type="text" class="zip hankaku required addr" onKeyUp="AjaxZip3.zip2addr(this,&#039;&#039;,&#039;data[User][address2]&#039;,&#039;data[User][address3]&#039;);" id="KeisaiAddress1" />          </div>
+            <%= f.text_field :address1 %>
+          </div>
           <div class="address">
             <h4>
               都道府県名
             </h4>
-            <input name="data[Keisai][address2]" type="text" class="required addr" id="address2" />          </div>
+            <%= f.text_field :address2 %>
+          </div>
           <div class="address">
             <h4>
               それ以降
             </h4>
-            <input name="data[Keisai][address3]" type="text" class="required addr" id="address3" />          </div>
+            <%= f.text_field :address3 %>          </div>
         </td>
       </tr>
       <tr>
@@ -118,11 +119,10 @@
           <p>
             電話番号
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input name="data[Keisai][tel]" type="text" class="tel hankaku required" id="tel" />          <span>
-            例）03-6418-1348
+          <%= f.text_field :tel %>          <span>
+            例）03-6418-◯◯××
           </span>
         </td>
       </tr>
@@ -131,10 +131,10 @@
           <p>
             URL
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input name="data[Keisai][url]" type="text" class="required" id="url" />          <span>
+          <%= f.text_field :url %>
+          <span>
             例）http://www.example.com
           </span>
         </td>
@@ -142,33 +142,18 @@
       <tr>
         <th>
           <p>
-            申し込み内容
-          </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
-        </th>
-        <td>
-        <p><input type="hidden" name="data[Keisai][plan]" id="KeisaiPlan_" value="" /><input type="radio" name="data[Keisai][plan]" id="KeisaiPlan12ヶ月掲載コース1ヶ月あたり金額38000円税別" class="required" value="12ヶ月掲載コース【1ヶ月あたり金額：38,000円(税別)】"  /><label for="KeisaiPlan12ヶ月掲載コース1ヶ月あたり金額38000円税別">12ヶ月掲載コース【1ヶ月あたり金額：38,000円(税別)】</label></p><p><input type="radio" name="data[Keisai][plan]" id="KeisaiPlan6ヶ月掲載コース1ヶ月あたり金額58000円税別" class="required" value="6ヶ月掲載コース【1ヶ月あたり金額：58,000円(税別)】"  /><label for="KeisaiPlan6ヶ月掲載コース1ヶ月あたり金額58000円税別">6ヶ月掲載コース【1ヶ月あたり金額：58,000円(税別)】</label></p>        </td>
-      </tr>
-      <tr>
-        <th>
-          <p>
-            オプションプランの申し込み
-          </p>
-        </th>
-        <td>
-                    <p><input type="hidden" name="data[Keisai][option01]" id="KeisaiOption01_" value="0" /><input type="checkbox" name="data[Keisai][option01]" value="メールマガジン(10,000人/回)への掲載【58,000円(税別)】" id="KeisaiOption01" /><label for="KeisaiOption01">メールマガジン(10,000人/回)への掲載【58,000円(税別)】</label></p>                    <p><input type="hidden" name="data[Keisai][option02]" id="KeisaiOption02_" value="0" /><input type="checkbox" name="data[Keisai][option02]" value="TOPページのオススメ求人リンク(1週間)【78,000円(税別)】" id="KeisaiOption02" /><label for="KeisaiOption02">TOPページのオススメ求人リンク(1週間)【78,000円(税別)】</label></p>                  </td>
-      </tr>
-      <tr>
-        <th>
-          <p>
             利用規約への同意
           </p>
-          <img src="/img/page_keisai/mod_keisai_main_must.jpg" width="33" height="16" />
         </th>
         <td>
-          <input type="hidden" name="data[Keisai][rule2]" id="KeisaiRule2_" value="0" /><input type="checkbox" name="data[Keisai][rule2]" class="required" value="1" id="KeisaiRule2" /><label for="KeisaiRule2">下記規約に同意する</label>          <br />
+	  <%#= f.check_box :rule ,{}, 'yes', 'no'  %>
+	  <!-- なぜかチェックバックスのacceptanceが反応しない -->
+	  <%= f.check_box :agreement %>
+
+          <%= f.label '下記規約に同意する' %>
+            <br />
           <div>
-            キャリアバイト：利用規約
+            スタディインターン：利用規約
             <br />
             <br />
             本規約は、株式会社アイタンクジャパン（以下、当社といいます。）が企画運営
@@ -295,17 +280,19 @@
           <span>
             ご質問等ございましたらこちらにご記入ください。
           </span>
-          <textarea name="data[Keisai][bikou]" cols="30" rows="6" id="KeisaiBikou" ></textarea>        </td>
+          <%= f.text_area :bikou %>
+	</td>
       </tr>
     </table>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
   <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    <!-- パスワード生成 -->
+    <% pass = [*1..9, *'A'..'Z', *'a'..'z'].sample(8).join -%>
+
+  <%= f.password_field :password, :value => pass %></div>
 
   <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation, :value => pass %></div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
