@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if company_signed_in?
-      session[:previous_url] || company_entries_path(current_company)
+      session[:previous_url] || launch_page_com_complete_path
     else
       session[:previous_url] || root_path
     end

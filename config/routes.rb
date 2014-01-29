@@ -2,6 +2,7 @@
 Studyinturn2::Application.routes.draw do
   
   get "launch_page/company"
+  get "launch_page/com_complete"
   get "launch_page/user"
   #　認証関連
   devise_for :companies, :controllers => {
